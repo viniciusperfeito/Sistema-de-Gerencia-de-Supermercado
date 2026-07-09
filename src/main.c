@@ -1,10 +1,8 @@
-#ifdef SUPERMERCADO_H
-#define SUPERMERCADO_H
-#include "/home/viniciusperfeito/Documents/Repositorios/Sistema-de-Supermercado/include/supermercado.h"
+#include <stdio.h>
+#include "../include/supermercado.h"
 
-int main (void) {
-
+int main(void) {
+    // Produto vetor e total
+    Produto produtos[MAX_PRODUTOS];
+    int total = 0;
 }
-
-
-#endif
