@@ -9,6 +9,7 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
 
     printf("Você fará a venda de qual produto?\n");
     fgets(nome, 50, stdin);
+    nome[strcspn(nome, "\n")] = '\0';
     for (int j = 0; j < total; j++) {
         if (strcmp(produtos[j].nome, nome) == 0) {
             printf("Produto encontrado: %s\n", produtos[j].nome);
