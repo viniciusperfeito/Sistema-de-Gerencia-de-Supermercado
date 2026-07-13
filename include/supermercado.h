@@ -17,7 +17,7 @@ typedef struct {
 } Produto;
 // Estrutura de data de vendas
 typedef struct {
-    char data[11];  // Exemplo: "dd/mm/yyyy"
+    int data[3];  // Exemplo: "dd/mm/yyyy"
     float valor;    // Valor total da venda
     char nome[50];  // Nome do produto vendido
     int quantidade; // Quantidade vendida
