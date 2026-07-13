@@ -29,11 +29,22 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
                 printf("Digite a data da venda (dd/mm/yyyy): ");
                 scanf("%d/%d/%d", &vendas[*total_vendas].data[0], &vendas[*total_vendas].data[1], &vendas[*total_vendas].data[2]);
                 vendas[*total_vendas].valor = preco * quantidade;
+                produtos[j].faturamento += preco * quantidade;
                 strcpy(vendas[*total_vendas].nome, nome);
                 vendas[*total_vendas].quantidade = quantidade;
                 (*total_vendas)++;
+                if (produtos[j].quantidade <= 5) {
+                    produtos[j].situacao = 0;
+                } else {
+                    produtos[j].situacao = 1;
+                }
             } else {
                 printf("Quantidade insuficiente\n");
+                if (produtos[j].quantidade <= 5) {
+                    produtos[j].situacao = 0;
+                } else {
+                    produtos[j].situacao = 1;
+                }
             }
             break;
         }
