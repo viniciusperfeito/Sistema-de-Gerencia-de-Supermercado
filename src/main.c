@@ -6,9 +6,10 @@ int main(void) {
     int total = 0;      // Total de produtos cadastrados
     int total_vendas = 0;   // Total de vendas realizadas
     printf("Sistema de Supermercado\n"); // Titulo do Menu
-    int opcao; // Variavel de opcao do usuario
-    while (opcao == 0) {
+    int opcao = -1; // Variavel de opcao do usuario
+    while (opcao != 0) {
         printf("Digite a opção desejada:\n");
+        printf("0 - Sair\n");
         printf("1 - Cadastrar produto\n");
         printf("2 - Controle de Estoque\n");
         printf("3 - Mostrar nome dos produtos\n");
@@ -18,6 +19,9 @@ int main(void) {
         scanf("%d", &opcao);
         // Switch para executar a opcao escolhida pelo usuario
         switch (opcao) {
+            case 0:
+                       printf("Encerrando o sistema...\n");
+                       break;
             case 1:
 
             case 2:
