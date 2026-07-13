@@ -17,6 +17,7 @@ int main(void) {
         printf("5 - Realizar venda\n");
         printf("6 - Exibir relatório de vendas\n");
         scanf("%d", &opcao);
+        while (getchar() != '\n');  // descarta o \n (e qualquer lixo) que sobrou no buffer
         // Switch para executar a opcao escolhida pelo usuario
         switch (opcao) {
             case 0:
