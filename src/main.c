@@ -20,7 +20,7 @@ int main(void) {
         case 1:
 
         case 2:
-
+            funcao_controle_estoque(produtos, total);
             break;
         case 3:
 
@@ -32,7 +32,7 @@ int main(void) {
 
             break;
         case 6:
-
+            funcao_faturamento(vendas, total_vendas);
             break;
         default:
             printf("Opção inválida\n");
