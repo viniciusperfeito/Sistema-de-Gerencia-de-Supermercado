@@ -4,13 +4,15 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
     char nome[50];
     int quantidade;
     float preco;
+    int encontrado = 0;
     printf("Venda de Produtos\n");
 
     printf("Você fará a venda de qual produto?\n");
-    scanf("%s", nome);
+    fgets(nome, 50, stdin);
     for (int j = 0; j < total; j++) {
         if (strcmp(produtos[j].nome, nome) == 0) {
             printf("Produto encontrado: %s\n", produtos[j].nome);
+            encontrado = 1;
             printf("Informações do produto:\n");
             if (produtos[j].quantidade == 0) {
                 printf("Produto indisponível\n");
@@ -34,8 +36,9 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
                 printf("Quantidade insuficiente\n");
             }
             break;
-        } else {
-            printf("Produto não encontrado\n");
         }
+    }
+    if (!encontrado) {
+        printf("Produto não encontrado\n");
     }
 }
