@@ -30,7 +30,7 @@ int main(void) {
 
                 break;
             case 5:
-
+                funcao_venda_produtos(produtos, vendas, total, &total_vendas);
                 break;
             case 6:
                 funcao_faturamento(vendas, total_vendas);
