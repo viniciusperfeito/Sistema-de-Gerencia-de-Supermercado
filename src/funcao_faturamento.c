@@ -1,4 +1,4 @@
-#include "/home/viniciusperfeito/Documents/Repositorios/Sistema-de-Supermercado/include/supermercado.h"
+#include "../include/supermercado.h"
 
 void funcao_faturamento(Venda vendas[], int total_vendas) {
     printf("Faturamento\n");

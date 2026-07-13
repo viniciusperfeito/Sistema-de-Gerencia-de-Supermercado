@@ -1,4 +1,4 @@
-#include "/home/viniciusperfeito/Documents/Repositorios/Sistema-de-Supermercado/include/supermercado.h"
+#include "../include/supermercado.h"
 
 void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *total_vendas) {
     char nome[50];
