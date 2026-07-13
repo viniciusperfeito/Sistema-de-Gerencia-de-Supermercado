@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "../include/supermercado.h"
 
 int main(void) {

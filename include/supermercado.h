@@ -4,6 +4,9 @@
 #define MAX_PRODUTOS 3000
 #define MAX_VENDAS 50000
 
+#include <stdio.h>
+#include <stdlib.h>
+
 // Estrutura para representar um produto
 typedef struct {
     char nome[50];
