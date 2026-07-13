@@ -29,6 +29,8 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
                 produtos[j].quantidade -= quantidade;
                 printf("Digite a data da venda (dd/mm/yyyy): ");
                 scanf("%d/%d/%d", &vendas[*total_vendas].data[0], &vendas[*total_vendas].data[1], &vendas[*total_vendas].data[2]);
+                printf("Digite o metodo de pagamento (crédito, débito ou dinheiro): ");
+                scanf("%s", vendas[*total_vendas].metodo_pagamento);
                 vendas[*total_vendas].valor = preco * quantidade;
                 produtos[j].faturamento += preco * quantidade;
                 strcpy(vendas[*total_vendas].nome, nome);

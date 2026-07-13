@@ -22,6 +22,7 @@ typedef struct {
     float valor;    // Valor total da venda
     char nome[50];  // Nome do produto vendido
     int quantidade; // Quantidade vendida
+    char metodo_pagamento[50]; // Metodo de pagamento utilizado
 } Venda;
 
 // Declaração das funções

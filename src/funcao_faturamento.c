@@ -20,7 +20,7 @@ void funcao_faturamento(Venda vendas[], int total_vendas) {
             for (int i = 0; i < total_vendas; i++) {
                 // Verifica se a venda foi realizada na data informada
                 if (vendas[i].data[0] == data[0] && vendas[i].data[1] == data[1] && vendas[i].data[2] == data[2]) {
-                    printf("Venda %d: R$ %.2f\n", i + 1, vendas[i].valor);
+                    printf("Venda %d: R$ %.2f - (%s)\n", i + 1, vendas[i].valor, vendas[i].metodo_pagamento);
                     faturamento_total += vendas[i].valor;
                 }
             }
@@ -31,7 +31,7 @@ void funcao_faturamento(Venda vendas[], int total_vendas) {
             for (int i = 0; i < total_vendas; i++) {
                 // Verifica se a venda foi realizada na data informada
                 if (vendas[i].data[1] == data[1] && vendas[i].data[2] == data[2]) {
-                    printf("Venda %d: R$ %.2f\n", i + 1, vendas[i].valor);
+                    printf("Venda %d: R$ %.2f - (%s)\n", i + 1, vendas[i].valor, vendas[i].metodo_pagamento);
                     faturamento_total += vendas[i].valor;
                 }
             }
@@ -42,7 +42,7 @@ void funcao_faturamento(Venda vendas[], int total_vendas) {
             for (int i = 0; i < total_vendas; i++) {
                 // Verifica se a venda foi realizada na data informada
                 if (vendas[i].data[2] == data[2]) {
-                    printf("Venda %d: R$ %.2f\n", i + 1, vendas[i].valor);
+                    printf("Venda %d: R$ %.2f - (%s)\n", i + 1, vendas[i].valor, vendas[i].metodo_pagamento);
                     faturamento_total += vendas[i].valor;
                 }
             }
