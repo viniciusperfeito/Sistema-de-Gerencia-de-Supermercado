@@ -24,15 +24,16 @@ int main(void) {
                        printf("Encerrando o sistema...\n");
                        break;
             case 1:
-
+                funcao_cadastra_produtos(produtos, &total);
+                break;
             case 2:
                 funcao_controle_estoque(produtos, total);
                 break;
             case 3:
-
+                funcao_imprime_produtos(produtos, total, 0);
                 break;
             case 4:
-
+                funcao_imprime_produtos(produtos, total, 1);
                 break;
             case 5:
                 funcao_venda_produtos(produtos, vendas, total, &total_vendas);
