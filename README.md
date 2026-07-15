@@ -24,15 +24,17 @@ src/*.c                  - implementação de cada função
 ```
 
 ### Compilação e execução
-
+```
 gcc src/*.c -Iinclude -o supermercado
-
+```
 # Linux/Mac:
+```
 ./supermercado
-
+```
 # Windows (cmd/PowerShell):
+```
 supermercado.exe
-
+```
 ## Licença
 
 Este projeto está sob a licença MIT — veja o arquivo LICENSE.
