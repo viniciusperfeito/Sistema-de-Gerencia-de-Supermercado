@@ -29,7 +29,7 @@ typedef struct {
 void funcao_cadastra_produtos(Produto produtos[], int *total);
 void funcao_controle_estoque(Produto produtos[], int total);
 void funcao_imprime_produtos(Produto produtos[], int total, int modo_completo);
-void funcao_busca_produtos(Produto produtos[], int total, char nome[]);
+int funcao_busca_produtos(Produto produtos[], int total, char nome[], int silencioso);
 void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *total_vendas);
 void funcao_faturamento(Venda vendas[], int total_vendas);
 

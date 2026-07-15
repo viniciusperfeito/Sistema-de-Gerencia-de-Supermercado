@@ -1,8 +1,9 @@
 #include "../include/supermercado.h"
 
+Produto produtos[MAX_PRODUTOS];     // Produto vetor e total
+Venda vendas[MAX_VENDAS];         // Venda vetor e total
+
 int main(void) {
-    Produto produtos[MAX_PRODUTOS];     // Produto vetor e total
-    Venda vendas[MAX_VENDAS];         // Venda vetor e total
     int total = 0;      // Total de produtos cadastrados
     int total_vendas = 0;   // Total de vendas realizadas
     printf("Sistema de Supermercado\n"); // Titulo do Menu
@@ -16,6 +17,7 @@ int main(void) {
         printf("4 - Exiba os dados dos produtos\n");
         printf("5 - Realizar venda\n");
         printf("6 - Exibir relatório de vendas\n");
+        printf("7 - Buscar produto\n");
         scanf("%d", &opcao);
         while (getchar() != '\n');  // descarta o \n (e qualquer lixo) que sobrou no buffer
         // Switch para executar a opcao escolhida pelo usuario
@@ -40,6 +42,14 @@ int main(void) {
                 break;
             case 6:
                 funcao_faturamento(vendas, total_vendas);
+                break;
+            case 7:
+                {
+                    char nome[50];
+                    printf("Digite o nome do produto: ");
+                    scanf(" %49[^\n]", nome);
+                    funcao_busca_produtos(produtos, total, nome, 0);
+                }
                 break;
             default:
                 printf("Opção inválida\n");
