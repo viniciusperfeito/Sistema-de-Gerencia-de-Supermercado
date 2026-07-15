@@ -23,12 +23,15 @@ src/main.c               - menu principal
 src/*.c                  - implementação de cada função
 ```
 
-## Compilação e execução
+### Compilação e execução
 
-```bash
 gcc src/*.c -Iinclude -o supermercado
+
+# Linux/Mac:
 ./supermercado
-```
+
+# Windows (cmd/PowerShell):
+supermercado.exe
 
 ## Licença
 
