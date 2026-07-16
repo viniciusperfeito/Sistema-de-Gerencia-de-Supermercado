@@ -1,6 +1,9 @@
 #include "../include/supermercado.h"
 
 void funcao_cadastra_produtos(Produto produtos[], int *total) {
+    printf("\n========================================\n");
+    printf("            CADASTRO DE PRODUTOS\n");
+    printf("========================================\n");
 
     if (*total >= MAX_PRODUTOS) {
         printf("%sErro: Limite maximo de produtos atingido%s\n", VERMELHO, RESET);
