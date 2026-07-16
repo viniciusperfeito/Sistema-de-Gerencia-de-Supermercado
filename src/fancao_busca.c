@@ -7,7 +7,7 @@ int funcao_busca_produtos(Produto produtos[], int total, char nome[], int silenc
         if (strcmp(produtos[i].nome, nome) == 0) {
 
             if (!silencioso) {
-                printf("\nProduto encontrado no ID %d\n", i);
+                printf("\n%sProduto encontrado no ID %d%s\n", VERDE, i, RESET);
                 funcao_imprime_produtos(&produtos[i], 1, 1);
             }
             return i;
@@ -15,7 +15,7 @@ int funcao_busca_produtos(Produto produtos[], int total, char nome[], int silenc
     }
 
     if (!silencioso) {
-        printf("\n✘ Produto nao encontrado.\n");
+        printf("\n%sProduto nao encontrado.%s\n", VERMELHO, RESET);
     }
     return -1;
 }

@@ -1,22 +1,19 @@
 #include "../include/supermercado.h"
 
 Produto produtos[MAX_PRODUTOS];     // Produto vetor e total
-Venda vendas[MAX_VENDAS];         // Venda vetor e total
-#define VERMELHO "\033[31m"
-#define VERDE    "\033[32m"
-#define AMARELO  "\033[33m"
-#define AZUL     "\033[34m"
-#define RESET    "\033[0m"
+Venda vendas[MAX_VENDAS];           // Venda vetor e total
 
 int main(void) {
     int total = 0;      // Total de produtos cadastrados
     int total_vendas = 0;   // Total de vendas realizadas
+
     printf("\n========================================\n");
-    printf("       SISTEMA DE SUPERMERCADO\n");
-    printf("========================================\n"); // Titulo do Menu
+    printf("%s       SISTEMA DE SUPERMERCADO%s\n", AZUL, RESET);
+    printf("========================================\n");
+
     int opcao = -1; // Variavel de opcao do usuario
     while (opcao != 0) {
-        printf("Digite a opção desejada:\n");
+        printf("\nDigite a opção desejada:\n");
         printf("0 - Sair\n");
         printf("1 - Cadastrar produto\n");
         printf("2 - Controle de Estoque\n");
@@ -27,11 +24,11 @@ int main(void) {
         printf("7 - Buscar produto\n");
         scanf("%d", &opcao);
         while (getchar() != '\n');  // descarta o \n (e qualquer lixo) que sobrou no buffer
-        // Switch para executar a opcao escolhida pelo usuario
+
         switch (opcao) {
             case 0:
-                       printf("Encerrando o sistema...\n");
-                       break;
+                printf("%sEncerrando o sistema...%s\n", AMARELO, RESET);
+                break;
             case 1:
                 funcao_cadastra_produtos(produtos, &total);
                 break;
@@ -59,10 +56,10 @@ int main(void) {
                 }
                 break;
             default:
-                puts("");
-                printf("Opção inválida\n");
-                puts("");
+                printf("\n%sOpção inválida%s\n\n", VERMELHO, RESET);
                 break;
         }
     }
+
+    return 0;
 }

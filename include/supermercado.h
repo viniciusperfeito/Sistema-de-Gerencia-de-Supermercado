@@ -4,6 +4,12 @@
 #define MAX_PRODUTOS 3000
 #define MAX_VENDAS 50000
 
+#define VERMELHO "\033[31m"
+#define VERDE    "\033[32m"
+#define AMARELO  "\033[33m"
+#define AZUL     "\033[34m"
+#define RESET    "\033[0m"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

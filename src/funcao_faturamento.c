@@ -54,6 +54,6 @@ void funcao_faturamento(Venda vendas[], int total_vendas) {
     }
 
     printf("------------------------------------------------\n");
-    printf("Faturamento total: R$ %.2f\n", faturamento_total);
+    printf("Faturamento total: %sR$ %.2f%s\n", AZUL, faturamento_total, RESET);
     printf("========================================\n");
 }

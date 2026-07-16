@@ -1,33 +1,31 @@
 #include "../include/supermercado.h"
 
 void funcao_imprime_produtos(Produto produtos[], int total, int completo) {
-
-    // Verifica se existem produtos cadastrados
     if (total == 0) {
-        printf("Nenhum produto cadastrado no estoque\n");
+        printf("%sNenhum produto cadastrado no estoque%s\n", AMARELO, RESET);
         return;
     }
 
-    printf("\n========================================\n");
-    printf("       RELATORIO DE ESTOQUE\n");
-    printf("========================================\n");
+    printf("\n RELATORIO DE ESTOQUE \n");
+
+    if (completo) {
+        printf("%-4s %-20s %-12s %-12s %-15s %s\n", "ID", "Nome", "Quantidade", "Preco", "Faturamento", "Situacao");
+        printf("--------------------------------------------------------------------\n");
+    }
 
     for (int i = 0; i < total; i++) {
-
         if (completo) {
-            // Imprime nome e demais dados do produto
-            printf("%-4s %-20s %-12s %-12s %-15s %s\n", "ID", "Nome", "Quantidade", "Preco", "Faturamento", "Situacao");
-            printf("--------------------------------------------------------------------\n");
-            for (int i = 0; i < total; i++) {
-                printf("%-4d %-20s %-12d R$ %-9.2f R$ %-12.2f %s\n",
-                       i, produtos[i].nome, produtos[i].quantidade, produtos[i].preco,
-                       produtos[i].faturamento, (produtos[i].situacao == 0) ? "REPOSICAO" : "OK");
+            char situacao_str[40];
+            if (produtos[i].situacao == 0) {
+                sprintf(situacao_str, "%sREPOSICAO%s", VERMELHO, RESET);
+            } else {
+                sprintf(situacao_str, "%sOK%s", VERDE, RESET);
             }
-            puts("");
+            printf("%-4d %-20s %-12d R$ %-9.2f R$ %-12.2f %s\n",
+                   i, produtos[i].nome, produtos[i].quantidade, produtos[i].preco,
+                   produtos[i].faturamento, situacao_str);
         } else {
-            // Imprime somente o nome do produto
             printf("ID: %d | Nome: %s\n", i, produtos[i].nome);
-            puts("");
         }
     }
 }

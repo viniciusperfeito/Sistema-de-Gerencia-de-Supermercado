@@ -2,12 +2,8 @@
 
 void funcao_cadastra_produtos(Produto produtos[], int *total) {
 
-    printf("\n========================================\n");
-    printf("          CADASTRO DE PRODUTOS\n");
-    printf("========================================\n");
-    // Verifica se o estoque atingiu o limite máximo
     if (*total >= MAX_PRODUTOS) {
-        printf("Erro: Limite maximo de produtos atingido\n");
+        printf("%sErro: Limite maximo de produtos atingido%s\n", VERMELHO, RESET);
         return;
     }
 
@@ -16,24 +12,22 @@ void funcao_cadastra_produtos(Produto produtos[], int *total) {
     printf("\nNome do produto: ");
     scanf(" %49[^\n]", nome_temp);
 
-    // Verifica se o produto ja existe usando a funcao busca (modo silencioso)
     int indice = funcao_busca_produtos(produtos, *total, nome_temp, 1);
 
     if (indice != -1) {
-        // Produto ja cadastrado, apenas atualiza a quantidade
         int qtd_adicional;
-        printf("Produto ja cadastrado. Quantidade atual: %d\n", produtos[indice].quantidade);
+        printf("%sProduto ja cadastrado.%s Quantidade atual: %d\n", AMARELO, RESET, produtos[indice].quantidade);
         printf("Quantidade a adicionar: ");
         scanf("%d", &qtd_adicional);
 
         produtos[indice].quantidade += qtd_adicional;
         produtos[indice].situacao = (produtos[indice].quantidade <= 5) ? 0 : 1;
 
+        printf("%sEstoque atualizado com sucesso!%s\n", VERDE, RESET);
         funcao_imprime_produtos(&produtos[indice], 1, 1);
         return;
     }
 
-    // Produto novo, armazena os dados
     strcpy(produtos[*total].nome, nome_temp);
 
     printf("Quantidade: ");
@@ -47,7 +41,6 @@ void funcao_cadastra_produtos(Produto produtos[], int *total) {
 
     (*total)++;
 
-    // Mostra o produto recem-cadastrado usando a funcao imprime
-    printf("\n✔ Produto cadastrado com sucesso!\n");   // ao invés de só mostrar a linha do produto
+    printf("%sProduto cadastrado com sucesso!%s\n", VERDE, RESET);
     funcao_imprime_produtos(&produtos[*total - 1], 1, 1);
 }

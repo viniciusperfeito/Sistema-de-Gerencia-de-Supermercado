@@ -1,5 +1,4 @@
 #include "../include/supermercado.h"
-#include <stdio.h>
 
 void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *total_vendas) {
     char nome[50];
@@ -7,7 +6,7 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
     float preco;
     int encontrado = 0;
     printf("\n========================================\n");
-    printf("         VENDA DE PRODUTOS\n");
+    printf("           VENDA DE PRODUTOS\n");
     printf("========================================\n");
 
     printf("Você fará a venda de qual produto?\n");
@@ -15,19 +14,17 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
     nome[strcspn(nome, "\n")] = '\0';
     for (int j = 0; j < total; j++) {
         if (strcmp(produtos[j].nome, nome) == 0) {
-            printf("Produto encontrado: %s\n", produtos[j].nome);
+            printf("%sProduto encontrado:%s %s\n", VERDE, RESET, produtos[j].nome);
             encontrado = 1;
             printf("Informações do produto:\n");
             if (produtos[j].quantidade == 0) {
-                printf("Produto indisponível\n");
+                printf("%sProduto indisponível%s\n", VERMELHO, RESET);
                 return;
             } else {
                 printf("Quantidade disponível: %d\n", produtos[j].quantidade);
             }
             printf("Preço: R$ %.2f\n", produtos[j].preco);
-            puts("");
             printf("Digite a quantidade desejada: ");
-            puts("");
             scanf("%d", &quantidade);
             preco = produtos[j].preco;
             if (quantidade <= produtos[j].quantidade) {
@@ -41,27 +38,16 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
                 strcpy(vendas[*total_vendas].nome, nome);
                 vendas[*total_vendas].quantidade = quantidade;
                 (*total_vendas)++;
-                if (produtos[j].quantidade <= 5) {
-                    produtos[j].situacao = 0;
-                } else {
-                    produtos[j].situacao = 1;
-                }
+                produtos[j].situacao = (produtos[j].quantidade <= 5) ? 0 : 1;
+                printf("%sVenda realizada com sucesso!%s\n", VERDE, RESET);
             } else {
-                puts("");
-                printf("Quantidade insuficiente\n");
-                puts("");
-                if (produtos[j].quantidade <= 5) {
-                    produtos[j].situacao = 0;
-                } else {
-                    produtos[j].situacao = 1;
-                }
+                printf("%sQuantidade insuficiente%s\n", VERMELHO, RESET);
+                produtos[j].situacao = (produtos[j].quantidade <= 5) ? 0 : 1;
             }
             break;
         }
     }
     if (!encontrado) {
-        puts("");
-        printf("Produto não encontrado. Reinicie o processo!\n");
-        puts("");
+        printf("%sProduto não encontrado%s\n", VERMELHO, RESET);
     }
 }
