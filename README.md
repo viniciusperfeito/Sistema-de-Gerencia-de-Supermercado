@@ -1,6 +1,6 @@
 # Sistema de Gerência de Supermercado
 
-Trabalho da disciplina de Algoritmos e Programação de Computadores I (APC1) — UFCAT, desenvolvido em dupla.
+Trabalho Final da disciplina de Algoritmos e Programação de Computadores I (APC1) — UFCAT.
 
 ## Descrição
 
