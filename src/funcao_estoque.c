@@ -1,7 +1,9 @@
 #include "../include/supermercado.h"
 
 void funcao_controle_estoque(Produto produtos[], int total) {
-    printf("Controle de Estoque\n");
+    printf("\n========================================\n");
+    printf("       CONTROLE DE ESTOQUE\n");
+    printf("========================================\n");
     printf("Produtos com estoque baixo:\n");
     int algum_baixo = 0;
     for (int i = 0; i < total; i++) {
@@ -12,5 +14,6 @@ void funcao_controle_estoque(Produto produtos[], int total) {
     }
     if (!algum_baixo) {
         printf("Nenhum produto com estoque baixo.\n");
+        puts("");
     }
 }

@@ -2,11 +2,18 @@
 
 Produto produtos[MAX_PRODUTOS];     // Produto vetor e total
 Venda vendas[MAX_VENDAS];         // Venda vetor e total
+#define VERMELHO "\033[31m"
+#define VERDE    "\033[32m"
+#define AMARELO  "\033[33m"
+#define AZUL     "\033[34m"
+#define RESET    "\033[0m"
 
 int main(void) {
     int total = 0;      // Total de produtos cadastrados
     int total_vendas = 0;   // Total de vendas realizadas
-    printf("Sistema de Supermercado\n"); // Titulo do Menu
+    printf("\n========================================\n");
+    printf("       SISTEMA DE SUPERMERCADO\n");
+    printf("========================================\n"); // Titulo do Menu
     int opcao = -1; // Variavel de opcao do usuario
     while (opcao != 0) {
         printf("Digite a opção desejada:\n");
@@ -52,7 +59,9 @@ int main(void) {
                 }
                 break;
             default:
+                puts("");
                 printf("Opção inválida\n");
+                puts("");
                 break;
         }
     }

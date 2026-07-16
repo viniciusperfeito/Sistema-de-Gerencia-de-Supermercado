@@ -1,11 +1,14 @@
 #include "../include/supermercado.h"
+#include <stdio.h>
 
 void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *total_vendas) {
     char nome[50];
     int quantidade;
     float preco;
     int encontrado = 0;
-    printf("Venda de Produtos\n");
+    printf("\n========================================\n");
+    printf("         VENDA DE PRODUTOS\n");
+    printf("========================================\n");
 
     printf("Você fará a venda de qual produto?\n");
     fgets(nome, 50, stdin);
@@ -22,7 +25,9 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
                 printf("Quantidade disponível: %d\n", produtos[j].quantidade);
             }
             printf("Preço: R$ %.2f\n", produtos[j].preco);
+            puts("");
             printf("Digite a quantidade desejada: ");
+            puts("");
             scanf("%d", &quantidade);
             preco = produtos[j].preco;
             if (quantidade <= produtos[j].quantidade) {
@@ -42,7 +47,9 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
                     produtos[j].situacao = 1;
                 }
             } else {
+                puts("");
                 printf("Quantidade insuficiente\n");
+                puts("");
                 if (produtos[j].quantidade <= 5) {
                     produtos[j].situacao = 0;
                 } else {
@@ -53,6 +60,8 @@ void funcao_venda_produtos(Produto produtos[], Venda vendas[], int total, int *t
         }
     }
     if (!encontrado) {
-        printf("Produto não encontrado\n");
+        puts("");
+        printf("Produto não encontrado. Reinicie o processo!\n");
+        puts("");
     }
 }

@@ -2,6 +2,9 @@
 
 void funcao_cadastra_produtos(Produto produtos[], int *total) {
 
+    printf("\n========================================\n");
+    printf("          CADASTRO DE PRODUTOS\n");
+    printf("========================================\n");
     // Verifica se o estoque atingiu o limite máximo
     if (*total >= MAX_PRODUTOS) {
         printf("Erro: Limite maximo de produtos atingido\n");
@@ -45,5 +48,6 @@ void funcao_cadastra_produtos(Produto produtos[], int *total) {
     (*total)++;
 
     // Mostra o produto recem-cadastrado usando a funcao imprime
+    printf("\n✔ Produto cadastrado com sucesso!\n");   // ao invés de só mostrar a linha do produto
     funcao_imprime_produtos(&produtos[*total - 1], 1, 1);
 }

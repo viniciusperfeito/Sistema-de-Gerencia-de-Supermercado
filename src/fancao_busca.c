@@ -15,7 +15,7 @@ int funcao_busca_produtos(Produto produtos[], int total, char nome[], int silenc
     }
 
     if (!silencioso) {
-        printf("\nProduto nao encontrado.\n");
+        printf("\n✘ Produto nao encontrado.\n");
     }
     return -1;
 }
